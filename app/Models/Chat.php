@@ -15,6 +15,7 @@ class Chat extends Model
         'sender_id',
         'sender_role',
         'appointment_id',
+        'order_id',
         'text',
     ];
 

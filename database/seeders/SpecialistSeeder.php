@@ -16,75 +16,76 @@ class SpecialistSeeder extends Seeder
     {
         $specialists = [
             [
-                'title' => 'ICT',
-                'description' => 'ICT Specialist',
-                'image' => '1682391808.jpg',
-                'category_id' => 3,
+                'title' => 'Cardiologist',
+                'description' => 'Heart Specialist',
+                'image' => 'cardiologist.jpg',
+                'category_id' => 1, // You may need to adjust the category_id as per your category structure.
                 'order' => 1,
                 'status' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'title' => 'Chemistry 1st Part',
-                'description' => 'Chemistry 1st Part',
-                'image' => '1682391794.jpg',
-                'category_id' => 2,
+                'title' => 'ENT Specialist',
+                'description' => 'Ear, Nose, and Throat Specialist',
+                'image' => 'ent_specialist.jpg',
+                'category_id' => 1, // You may need to adjust the category_id as per your category structure.
                 'order' => 2,
                 'status' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'title' => 'Chemistry 2nd Part',
-                'description' => 'Chemistry 2nd Part',
-                'image' => '1682391784.png',
-                'category_id' => 2,
+                'title' => 'Dermatologist',
+                'description' => 'Skin Specialist',
+                'image' => 'dermatologist.jpg',
+                'category_id' => 1, // You may need to adjust the category_id as per your category structure.
                 'order' => 3,
                 'status' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'title' => 'BIOLOGY 1ST Part',
-                'description' => 'BIOLOGY 1ST Part',
-                'image' => '1682391775.jpg',
-                'category_id' => 2,
+                'title' => 'Orthopedic Surgeon',
+                'description' => 'Orthopedic Specialist',
+                'image' => 'orthopedic_surgeon.jpg',
+                'category_id' => 1, // You may need to adjust the category_id as per your category structure.
                 'order' => 4,
                 'status' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'title' => 'BIOLOGY 2nd Part',
-                'description' => 'BIOLOGY 2nd Part',
-                'image' => '1682391760.jpg',
-                'category_id' => 2,
+                'title' => 'Gynecologist',
+                'description' => 'Women\'s Health Specialist',
+                'image' => 'gynecologist.jpg',
+                'category_id' => 1, // You may need to adjust the category_id as per your category structure.
                 'order' => 5,
                 'status' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'title' => 'Biology',
-                'description' => 'Biology',
-                'image' => '1682391745.jpg',
-                'category_id' => 3,
+                'title' => 'Pediatrician',
+                'description' => 'Child Health Specialist',
+                'image' => 'pediatrician.jpg',
+                'category_id' => 1, // You may need to adjust the category_id as per your category structure.
                 'order' => 6,
                 'status' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'title' => 'Physics',
-                'description' => 'Physics',
-                'image' => '1682391829.png',
-                'category_id' => 3,
+                'title' => 'Ophthalmologist',
+                'description' => 'Eye Specialist',
+                'image' => 'ophthalmologist.jpg',
+                'category_id' => 1, // You may need to adjust the category_id as per your category structure.
                 'order' => 7,
                 'status' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            // Add more specialist records as needed
         ];
 
         foreach ($specialists as $specialist) {

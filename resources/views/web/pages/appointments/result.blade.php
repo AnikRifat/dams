@@ -44,7 +44,7 @@
 
                 <div class="sectionTitle ">
 
-                    <h2 class="sectionTitle__title ">Related TEachers</h2>
+                    <h2 class="sectionTitle__title ">Related Doctors</h2>
 
 
                 </div>

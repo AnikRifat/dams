@@ -27,7 +27,7 @@
                         @foreach ($orders as $item)
                         <div class="d-flex justify-between">
 
-                            <a href="{{ route('chat.show.patient',$item->appointment->id) }}">
+                            <a href="{{ route('chat.show.patient',$item->id) }}">
                                 <div class="d-flex items-center">
 
                                     <div class="shrink-0">
@@ -124,58 +124,62 @@
                                 </div>
                             </div>
                         </div>
-                        @else<div class="col-xl-7 col-lg-10">
+                        {{-- @else<div class="col-xl-7 col-lg-10">
                             <div class="d-flex items-center">
                                 <div class="shrink-0">
                                     @php
                                     $patient = App\Models\User::find($chat->sender_id);
 
                                     @endphp <img src="{{ asset('') }}uploads/patients/{{ $patient->patient->image }}"
-                                      alt="image" class="size-50">
-                                </div>
-                                <div class="lh-11 fw-500 text-dark-1 ml-10">{{ $patient->name }}</div>
-                                <div class="text-14 lh-11 ml-10">{{ $chat->created_at->format('d M h:i:a') }}</div>
-                            </div>
-                            <div class="d-block mt-15">
-                                <div class="py-20 px-30 bg-light-3 rounded-8">
-                                    {{ $chat->text }}
-                                </div>
-                            </div>
-                        </div>
-                        @endif
-
-                        @endforeach
-
-
-
-
+                        alt="image" class="size-50">
                     </div>
-                    @endif
+                    <div class="lh-11 fw-500 text-dark-1 ml-10">{{ $patient->name }}</div>
+                    <div class="text-14 lh-11 ml-10">{{ $chat->created_at->format('d M h:i:a') }}</div>
                 </div>
-
-                <div class="py-25 px-40 border-top-light">
-                    <div class="row y-gap-10 justify-between">
-                        <form action="{{ route('chat.save') }}" method="POST">
-                            @csrf
-                            <input type="hidden" name="appointment_id" value="{{ $appointment->id }}">
-                            <input type="hidden" name="sender_id" value="{{ Auth::user()->id }}">
-                            <input type="hidden" name="sender_role" value="{{ Auth::user()->role }}">
-                            <div class="col-lg-7">
-                                <input class="-dark-bg-dark-1 py-20 w-1/1" type="text" name="text"
-                                  placeholder="Type a Message">
-                            </div>
-                            <div class="col-auto">
-                                <button type="submit" class="button -md -purple-1 text-white shrink-0">Send
-                                    Message</button>
-                            </div>
-                        </form>
+                <div class="d-block mt-15">
+                    <div class="py-20 px-30 bg-light-3 rounded-8">
+                        {{ $chat->text }}
                     </div>
                 </div>
-            </div>
+            </div> --}}
             @endif
 
+            @endforeach
+
+
+
+
+        </div>
+        @endif
+    </div>
+
+    <div class="py-25 px-40 border-top-light">
+        @php
+        $order_id = App\Models\Order::where('user_id',Auth::user()->id)->where('item_id',$appointment->id
+        )->pluck('id')->first();
+        @endphp
+        <div class="row y-gap-10 justify-between">
+            <form action="{{ route('chat.save') }}" method="POST">
+                @csrf
+                <input type="hidden" name="order_id" value="{{ $order_id }}">
+                <input type="hidden" name="appointment_id" value="{{ $appointment->id }}">
+                <input type="hidden" name="sender_id" value="{{ Auth::user()->id }}">
+                <input type="hidden" name="sender_role" value="{{ Auth::user()->role }}">
+                <div class="col-lg-7">
+                    <input class="-dark-bg-dark-1 py-20 w-1/1" type="text" name="text" placeholder="Type a Message">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="button -md -purple-1 text-white shrink-0">Send
+                        Message</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
+@endif
+
+</div>
+</div>
 
 </div>
 @endsection

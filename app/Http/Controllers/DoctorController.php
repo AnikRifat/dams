@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Appointment;
 use App\Models\Chat;
 use App\Models\Doctor;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,20 +27,26 @@ class DoctorController extends Controller
         $patient = false;
         $chats = false;
         $appointment = false;
+
         return view('web.pages.chat.doctor', compact('appointment', 'patient', 'users', 'doctorAppointments', 'chats'));
     }
-    public function chat($appointmentId)
+    public function chat($user, $appointmentId)
     {
+        $orderid = Order::query()->where('user_id', $user)->where(
+            'item_id',
+            $appointmentId
+        )->pluck('id')->first();
         // dd($appointmentId);
-        $chats = Chat::Where('appointment_id', $appointmentId)->get();
-
+        $chats = Chat::Where('order_id', $orderid)->get();
+        // $patient_id= Chat::Where('appointment_id', $appointmentId)->whereIN('sender_id', [$user, Auth::user()->id])->get()
         $appointment = Appointment::find($appointmentId);
         // dd($appointment);
 
         $doctorAppointments = Appointment::where('creator_id', Auth::user()->id)->where('status', 1)->get();
-
+        // dd($orderid);
         // dd($chats);
-        return view('web.pages.chat.doctor', compact('chats', 'doctorAppointments', 'appointment'));
+        // $cahtuser = $user;
+        return view('web.pages.chat.doctor', compact('chats', 'doctorAppointments', 'appointment', 'orderid'));
     }
     /**
      * Display a listing of the resource.

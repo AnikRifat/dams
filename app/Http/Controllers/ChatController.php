@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Chat;
 use App\Models\Appointment;
+use App\Models\Chat;
 use Illuminate\Http\Request;
 
 class ChatController extends Controller
@@ -49,6 +49,7 @@ class ChatController extends Controller
     {
         $validatedData = $request->validate([
             'sender_id' => 'required',
+            'order_id' => 'required',
             'appointment_id' => 'required',
             'sender_role' => 'required',
             'text' => 'required',

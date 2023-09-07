@@ -87,8 +87,8 @@ Route::prefix('chat/inbox')->middleware(['auth', 'checkProfile'])->group(functio
 
     Route::get('/doctor', [DoctorController::class, 'inbox'])->name('chat.inbox.doctor');
     Route::get('/patient', [PatientController::class, 'inbox'])->name('chat.inbox.patient');
-    Route::get('doctor/appointment/{appointment}', [PatientController::class, 'chat'])->name('chat.show.patient');
-    Route::get('patient/appointment/{appointment}', [DoctorController::class, 'chat'])->name('chat.show.doctor');
+    Route::get('doctor/appointment/{orderid}', [PatientController::class, 'chat'])->name('chat.show.patient');
+    Route::get('patient/appointment/{user}/{appointment}', [DoctorController::class, 'chat'])->name('chat.show.doctor');
 
 
     Route::post('/', [ChatController::class, 'store'])->name('chat.save');

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Chat;
 use App\Models\Appointment;
+use App\Models\Chat;
 use App\Models\Order;
 use App\Models\Patient;
 use App\Models\User;
@@ -20,12 +20,13 @@ class PatientController extends Controller
         $appointment = false;
         return view('web.pages.chat.patient', compact('orders', 'appointment'));
     }
-    public function chat($appointment)
+    public function chat($orderid)
     {
-        $chats = Chat::Where('appointment_id', $appointment)->get();
+        $order = Order::find($orderid);
+        $chats = Chat::Where('order_id', $orderid)->get();
         $orders = Order::where('type', 1)->where('user_id', Auth::user()->id)->get();
-        $appointment = Appointment::find($appointment);
-        // dd($appointment);
+        $appointment = Appointment::find($order->item_id);
+        // dd($order);
         return view('web.pages.chat.patient', compact('orders', 'chats', 'appointment'));
     }
     /**

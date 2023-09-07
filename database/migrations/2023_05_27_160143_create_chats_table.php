@@ -18,6 +18,7 @@ class CreateChatsTable extends Migration
             $table->string('sender_id');
             $table->string('sender_role');
             $table->string('appointment_id');
+            $table->string('order_id');
             $table->text('text');
             $table->timestamps();
         });

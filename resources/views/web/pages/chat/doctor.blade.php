@@ -15,8 +15,9 @@
     <div class="row y-gap-30">
         <div class="col-xl-4">
             <div class="rounded-16 bg-white -dark-bg-dark-1 shadow-4 h-100">
+                @foreach ($doctorAppointments as $item)
                 <div class="d-flex items-center py-20 px-30 border-bottom-light">
-                    <h2 class="text-17 lh-1 fw-500">Chats</h2>
+                    <h2 class="text-17 lh-1 fw-500">{{ $item->title }}</h2>
                 </div>
 
                 <div class="py-30 px-30">
@@ -24,18 +25,23 @@
                         {{-- @php
                         dd($orders) ;
                         @endphp --}}
-                        @foreach ($doctorAppointments as $item)
+                        @php
+                        $patient_ids = App\Models\Order::where('item_id' , $item->id)->pluck('user_id');
+                        $patients =App\Models\User::whereIn('id' , $patient_ids)->get();
+
+                        @endphp
+                        @foreach ($patients as $patient)
                         <div class="d-flex justify-between">
 
-                            <a href="{{ route('chat.show.doctor',$item->id) }}">
+                            <a href="{{ route('chat.show.doctor',[$patient->id,$item->id]) }}">
                                 <div class="d-flex items-center">
 
                                     <div class="shrink-0">
-                                        <img src="{{ asset('uploads') }}/appointments/{{ $item->image }}" alt="image"
+                                        <img src="{{ asset('uploads') }}/patients/{{ $patient->image }}" alt="image"
                                           class="size-50">
                                     </div>
                                     <div class="ml-10">
-                                        <div class="text-14 lh-11 mt-5">{{ $item->title }}</div>
+                                        <div class="text-14 lh-11 mt-5">{{ $patient->name }}</div>
                                     </div>
 
                                 </div>
@@ -47,8 +53,11 @@
 
 
 
+
                     </div>
                 </div>
+                @endforeach
+
             </div>
         </div>
 
@@ -99,7 +108,7 @@
                         </div>
                         @elseif($chat->sender_role == 0)
                         <div class="col-xl-7 col-lg-10">
-                            <div class="d-flex items-center bg-dark-1">
+                            <div class="d-flex items-center ">
 
                                 <div class="lh-11 fw-500 text-white-1 ml-10">Moderator</div>
                                 <div class="text-14 lh-11 ml-10 text-white-1">
@@ -107,7 +116,7 @@
                                 </div>
                             </div>
                             <div class="d-block mt-15">
-                                <div class="py-20 px-30 bg-light-3 rounded-8 text-white-1">
+                                <div class="py-20 px-30 bg-dark-1 rounded-8 text-white">
                                     {{ $chat->text }}
                                 </div>
                             </div>
@@ -143,6 +152,7 @@
                     <div class="row y-gap-10 justify-between">
                         <form action="{{ route('chat.save') }}" method="POST">
                             @csrf
+                            <input type="hidden" name="order_id" value="{{ $orderid }}">
                             <input type="hidden" name="appointment_id" value="{{ $appointment->id }}">
                             <input type="hidden" name="sender_id" value="{{ Auth::user()->id }}">
                             <input type="hidden" name="sender_role" value="{{ Auth::user()->role }}">
