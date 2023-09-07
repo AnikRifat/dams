@@ -6,7 +6,7 @@ use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Content;
 use App\Models\Duration;
-use App\Models\Speacialist;
+use App\Models\Specialist;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -35,8 +35,8 @@ class AppServiceProvider extends ServiceProvider
         $categories = Category::orderBy('order', 'ASC')->where('status', '1')->get();
         view()->share('categories', $categories);
 
-        $speacialists = Speacialist::orderBy('order', 'ASC')->where('status', '1')->get();
-        view()->share('speacialists', $speacialists);
+        $specialists = Specialist::orderBy('order', 'ASC')->where('status', '1')->get();
+        view()->share('specialists', $specialists);
 
         $durations = Duration::orderBy('id', 'DESC')->where('status', '1')->get();
         view()->share('durations', $durations);

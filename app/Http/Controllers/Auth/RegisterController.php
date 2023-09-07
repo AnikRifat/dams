@@ -73,14 +73,14 @@ class RegisterController extends Controller
         // $data = array('name' => "Virat Gandhi");
         // dd($data);
         // Mail::send(['text' => 'email.test'], $data, function ($message) {
-        //     $message->to('reafatul@gmail.com')->speacialist('Welcome to Lekhapora - Your Learning Journey Begins!');
+        //     $message->to('reafatul@gmail.com')->specialist('Welcome to Lekhapora - Your Learning Journey Begins!');
         // });
 
         $userdata = array('name' => $data['name'], 'email' => $data['email']);
         $email = $data['email'];
 
         Mail::send(['text' => 'email.test'], $userdata, function ($message) use ($email) {
-            $message->to($email)->speacialist('User Registration Done');
+            $message->to($email)->specialist('User Registration Done');
         });
 
         return User::create([

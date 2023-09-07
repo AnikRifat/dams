@@ -1,20 +1,20 @@
 <?php
 
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\ContentController;
-use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\DurationController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PatientController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\SearchController;
-use App\Http\Controllers\PatientController;
-use App\Http\Controllers\SpeacialistController;
-use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\SpecialistController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -47,8 +47,8 @@ Route::get('/products/all', [PublicController::class, 'products'])->name('produc
 Route::get('/product/details/{product}', [PublicController::class, 'productdetails'])->name('product.details');
 Route::get('/doctors/all', [PublicController::class, 'doctors'])->name('doctor.all');
 Route::get('/doctor/appointments/{doctor}', [PublicController::class, 'doctordetails'])->name('doctor.details');
-Route::get('/speacialists/all', [PublicController::class, 'speacialists'])->name('speacialist.all');
-Route::get('/speacialist/appointments/{speacialist}', [PublicController::class, 'speacialistdetails'])->name('speacialist.details');
+Route::get('/specialists/all', [PublicController::class, 'specialists'])->name('specialist.all');
+Route::get('/specialist/appointments/{specialist}', [PublicController::class, 'specialistdetails'])->name('specialist.details');
 
 Route::post('/filter', [SearchController::class, 'filter'])->name('filter');
 Route::post('/search', [SearchController::class, 'search'])->name('search'); //  search
@@ -136,17 +136,17 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
         Route::get('/inactive/{category}', [CategoryController::class, 'inactive'])->name('categories.inactive');
     });
 
-    Route::prefix('speacialists')->group(function () {
+    Route::prefix('specialists')->group(function () {
         // Hero-Routes
-        Route::get('/', [SpeacialistController::class, 'index'])->name('speacialists.index');
-        Route::get('/create', [SpeacialistController::class, 'create'])->name('speacialists.create');
-        Route::post('/', [SpeacialistController::class, 'store'])->name('speacialists.store');
-        Route::get('/{speacialist}', [SpeacialistController::class, 'show'])->name('speacialists.show');
-        Route::get('/{speacialist}/edit', [SpeacialistController::class, 'edit'])->name('speacialists.edit');
-        Route::put('/{speacialist}', [SpeacialistController::class, 'update'])->name('speacialists.update');
-        Route::get('/{speacialist}', [SpeacialistController::class, 'destroy'])->name('speacialists.destroy');
-        Route::get('/active/{speacialist}', [SpeacialistController::class, 'active'])->name('speacialists.active');
-        Route::get('/inactive/{speacialist}', [SpeacialistController::class, 'inactive'])->name('speacialists.inactive');
+        Route::get('/', [SpecialistController::class, 'index'])->name('specialists.index');
+        Route::get('/create', [SpecialistController::class, 'create'])->name('specialists.create');
+        Route::post('/', [SpecialistController::class, 'store'])->name('specialists.store');
+        Route::get('/{specialist}', [SpecialistController::class, 'show'])->name('specialists.show');
+        Route::get('/{specialist}/edit', [SpecialistController::class, 'edit'])->name('specialists.edit');
+        Route::put('/{specialist}', [SpecialistController::class, 'update'])->name('specialists.update');
+        Route::get('/{specialist}', [SpecialistController::class, 'destroy'])->name('specialists.destroy');
+        Route::get('/active/{specialist}', [SpecialistController::class, 'active'])->name('specialists.active');
+        Route::get('/inactive/{specialist}', [SpecialistController::class, 'inactive'])->name('specialists.inactive');
     });
 
 

@@ -55,60 +55,60 @@
                                         <option value="">Select Class</option>
                                         @foreach($categories as $class)
                                         <option value="{{ $class->id }}">{{ $class->title }}</option>
-                                        @endforeach
-                                    </select>
-                                </div> --}}
+                                @endforeach
+                                </select>
+                        </div> --}}
 
-                                <div class="col-md-6">
-                                    <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Speacialist*</label>
-                                    <select name="speacialist_id" class="form-control">
-                                        <option value="">Select Speacialist</option>
-                                        @foreach($speacialists as $speacialist)
-                                        <option value="{{ $speacialist->id }}">{{ $speacialist->title }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                        <div class="col-md-6">
+                            <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Specialist*</label>
+                            <select name="specialist_id" class="form-control">
+                                <option value="">Select Specialist</option>
+                                @foreach($specialists as $specialist)
+                                <option value="{{ $specialist->id }}">{{ $specialist->title }}</option>
+                                @endforeach
+                            </select>
+                        </div>
 
 
-                                <div class="col-md-6">
-                                    <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Duration*</label>
-                                    <select name="duration" class="form-control">
-                                        <option value="">Select duration</option>
-                                        @foreach($durations as $duration)
-                                        <option class="text-dark-1" value="{{ $duration->id }}">
-                                            {{ $duration->timeline }}
-                                        </option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                        <div class="col-md-6">
+                            <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Duration*</label>
+                            <select name="duration" class="form-control">
+                                <option value="">Select duration</option>
+                                @foreach($durations as $duration)
+                                <option class="text-dark-1" value="{{ $duration->id }}">
+                                    {{ $duration->timeline }}
+                                </option>
+                                @endforeach
+                            </select>
+                        </div>
 
-                                {{-- <div class="col-md-6">
+                        {{-- <div class="col-md-6">
                                     <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Class Link*</label>
                                     <input type="text" name="meeting_link" placeholder="Class Link">
                                 </div> --}}
-                                <input type="text" name="creator_id" value="{{Auth::user()->id}}" hidden>
+                        <input type="text" name="creator_id" value="{{Auth::user()->id}}" hidden>
 
-                                <div class="col-md-6">
-                                    <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Image*</label>
-                                    <input type="file" name="image" class="dropify">
-                                </div>
-
-                                <div class="col-12">
-                                    <button type="submit" class="button -md -outline-purple-1 text-purple-1">Create
-                                        Appointment</button>
-                                </div>
-                            </form>
-
+                        <div class="col-md-6">
+                            <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Image*</label>
+                            <input type="file" name="image" class="dropify">
                         </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="button -md -outline-purple-1 text-purple-1">Create
+                                Appointment</button>
+                        </div>
+                        </form>
+
                     </div>
                 </div>
-
-
-
             </div>
 
+
+
         </div>
+
     </div>
+</div>
 
 
 </div>

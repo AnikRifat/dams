@@ -15,7 +15,7 @@
 
                         <div class="page-header__info pt-20">
                             <h1 class="text-30 lh-14 fw-700 text-white">{{ $doctor->name }}</h1>
-                            <div class="text-white">{{ $doctor->doctor->speacialists->title }}</div>
+                            <div class="text-white">{{ $doctor->doctor->specialists->title }}</div>
                             <div class="d-flex x-gap-20 pt-15">
 
                                 <div class="d-flex items-center text-white">

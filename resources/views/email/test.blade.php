@@ -14,7 +14,7 @@ access to a vast array of appointments, resources, and interactive features that
 Here's
 what you can expect:
 
-Diverse Appointment Catalog: Explore our extensive appointment catalog covering various speacialists, skills, and
+Diverse Appointment Catalog: Explore our extensive appointment catalog covering various specialists, skills, and
 industries.
 Whether
 you're looking to enhance your professional skills or pursue personal interests, we have something for everyone.
@@ -32,7 +32,7 @@ successful completion. Showcase your newly acquired skills and accomplishments t
 institutions.
 
 Learning Resources: Access supplementary learning materials, downloadable resources, and recommended readings to deepen
-your knowledge and broaden your understanding of the speacialist matter.
+your knowledge and broaden your understanding of the specialist matter.
 
 We are committed to providing you with a seamless and enriching learning experience. Should you have any questions,
 encounter any issues, or need assistance along the way, our dedicated support team is here to help.

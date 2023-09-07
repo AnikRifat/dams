@@ -17,7 +17,7 @@ class Appointment extends Model
         'title',
         'price',
         'description',
-        'speacialist_id',
+        'specialist_id',
         'creator_id',
         'duration',
         'image',

@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use App\Models\Blog;
 use App\Models\Comments;
-use App\Models\Appointment;
 use App\Models\Duration;
 use App\Models\Order;
-use App\Models\Product;
 use App\Models\Patient;
-use App\Models\Speacialist;
+use App\Models\Product;
+use App\Models\Specialist;
 use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -104,18 +104,18 @@ class PublicController extends Controller
         return view('web.pages.appointments.edit', compact('user', 'appointment'));
     }
 
-    public function speacialists()
+    public function specialists()
     {
-        $speacialists = Speacialist::where('status', '1')->get();
-        return view('web.pages.speacialist.index', compact('speacialists'));
+        $specialists = Specialist::where('status', '1')->get();
+        return view('web.pages.specialist.index', compact('specialists'));
     }
 
-    public function speacialistdetails($speacialist)
+    public function specialistdetails($specialist)
     {
-        $speacialistitem = Speacialist::find($speacialist);
-        $appointments = Appointment::where('status', '1')->where('speacialist_id', $speacialist)->get();
+        $specialistitem = Specialist::find($specialist);
+        $appointments = Appointment::where('status', '1')->where('specialist_id', $specialist)->get();
         // dd($appointments);
-        return view('web.pages.speacialist.details', compact('appointments', 'speacialistitem'));
+        return view('web.pages.specialist.details', compact('appointments', 'specialistitem'));
     }
     public function products()
     {

@@ -96,7 +96,7 @@ class OrderController extends Controller
                 $email = Auth::user()->email;
 
                 Mail::send(['text' => 'email.appointment-purchase'], $userdata, function ($message) use ($email) {
-                    $message->to($email)->speacialist('CLekhapora - appointment order');
+                    $message->to($email)->specialist('CLekhapora - appointment order');
                 });
 
                 $percentage = (25 / 100) * $data['price'];
@@ -135,7 +135,7 @@ class OrderController extends Controller
                 $email = Auth::user()->email;
 
                 Mail::send(['text' => 'email.product-purchase'], $userdata, function ($message) use ($email) {
-                    $message->to($email)->speacialist('Lekhapora - product order');
+                    $message->to($email)->specialist('Lekhapora - product order');
                 });
 
 

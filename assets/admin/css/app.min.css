@@ -4834,12 +4834,12 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 }
 
 .message-list li .col-mail-2 .date,
-.message-list li .col-mail-2 .speacialist {
+.message-list li .col-mail-2 .specialist {
     position: absolute;
     top: 0
 }
 
-.message-list li .col-mail-2 .speacialist {
+.message-list li .col-mail-2 .specialist {
     left: 0;
     right: 200px;
     text-overflow: ellipsis;

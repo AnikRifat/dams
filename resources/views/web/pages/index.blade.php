@@ -5,7 +5,7 @@
 <div class="main-body">
 
     @include('web.component.hero')
-    @include('web.component.speacialists')
+    @include('web.component.specialists')
     {{-- @include('web.component.categories') --}}
 
     <section class="layout-pt-md layout-pb-lg">

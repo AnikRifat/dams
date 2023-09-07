@@ -108,19 +108,19 @@
     </ul>
     </li> --}}
     {{-- End - Category --}}
-    {{-- speacialist --}}
+    {{-- specialist --}}
     <li>
         <a href="javascript: void(0);" class="has-arrow waves-effect">
             <i class="bx bx-home-circle"></i>
-            <span key="t-speacialist">Speacialist</span>
+            <span key="t-specialist">Specialist</span>
         </a>
         <ul class="sub-menu" aria-expanded="false">
-            <li><a href="{{ route('speacialists.index') }}" key="t-list">All Speacialist</a></li>
-            <li><a href="{{ route('speacialists.create') }}" key="t-create">Create Speacialist</a></li>
+            <li><a href="{{ route('specialists.index') }}" key="t-list">All Specialist</a></li>
+            <li><a href="{{ route('specialists.create') }}" key="t-create">Create Specialist</a></li>
 
         </ul>
     </li>
-    {{-- End - speacialist --}}
+    {{-- End - specialist --}}
 
 
 

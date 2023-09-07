@@ -22,7 +22,7 @@ class SendRegistrationEmail implements ShouldQueue
 
         // Send the email
         Mail::send('email.test', function ($message) use ($user) {
-            $message->to($user->email)->speacialist('Welcome to Lekhapora - Your Learning Journey Begins!');
+            $message->to($user->email)->specialist('Welcome to Lekhapora - Your Learning Journey Begins!');
         });
     }
 }

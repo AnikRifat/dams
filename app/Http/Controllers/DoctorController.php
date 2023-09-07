@@ -77,7 +77,7 @@ class DoctorController extends Controller
             'address' => 'required',
             'birthday' => 'required',
             'profession' => 'required',
-            'speacialist' => 'required',
+            'specialist' => 'required',
         ]);
         // dd($data);
         if ($request->hasFile('image')) {
@@ -149,7 +149,7 @@ class DoctorController extends Controller
             'address' => 'required', 'birthday' => 'required',
             'current_department' => 'required',
             'profession' => 'required',
-            'speacialist' => 'required',
+            'specialist' => 'required',
         ]);
         if ($request->hasFile('image')) {
             $image = $request->file('image');

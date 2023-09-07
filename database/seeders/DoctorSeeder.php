@@ -17,7 +17,7 @@ class DoctorSeeder extends Seeder
                 'birthday' => '1993-05-19',
                 'address' => 'RSRM Building, 3no. road, Kunjochaya R/A, E-4 fl...',
                 'profession' => 'Doctor',
-                'speacialist' => rand(1, 7), // Generate random speacialist ID from 1 to 7
+                'specialist' => rand(1, 7), // Generate random specialist ID from 1 to 7
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

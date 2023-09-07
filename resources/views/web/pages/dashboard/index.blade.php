@@ -24,11 +24,11 @@
                                     @csrf
 
                                     <div class="masthead-form__item">
-                                        <select class="form-control" name="speacialist_id">
+                                        <select class="form-control" name="specialist_id">
                                             <option value="">---select---</option>
-                                            @foreach($speacialists as $speacialist)
-                                            <option value="{{ $speacialist->id }}">
-                                                {{ $speacialist->title }}
+                                            @foreach($specialists as $specialist)
+                                            <option value="{{ $specialist->id }}">
+                                                {{ $specialist->title }}
                                             </option>
                                             @endforeach
                                         </select>
@@ -193,14 +193,14 @@
                                             </div>
 
                                             <div class="col-md-6">
-                                                <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Speacialist You
+                                                <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Specialist You
                                                     Want to
                                                     Teach</label>
-                                                <select name="speacialist">
-                                                    @foreach ($speacialists as $speacialist)
-                                                    <option value="{{ $speacialist->id }}" @if ($user->
-                                                        doctor->speacialist ==
-                                                        $speacialist->id) selected @endif>{{ $speacialist->title }}
+                                                <select name="specialist">
+                                                    @foreach ($specialists as $specialist)
+                                                    <option value="{{ $specialist->id }}" @if ($user->
+                                                        doctor->specialist ==
+                                                        $specialist->id) selected @endif>{{ $specialist->title }}
                                                     </option>
                                                     @endforeach
                                                 </select>

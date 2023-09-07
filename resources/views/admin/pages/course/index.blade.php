@@ -54,7 +54,7 @@
                                         <th>instructor</th>
                                         <th>price</th>
                                         {{-- <th>class</th> --}}
-                                        {{-- <th>speacialist</th> --}}
+                                        {{-- <th>specialist</th> --}}
                                         <th>duration</th>
                                         <th>Image</th>
                                         <th>description</th>
@@ -101,7 +101,7 @@
                                         <td>{{ $appointment->price }}</td>
                                         {{-- <td>{{ $appointment->class_id }}</td> --}}
 
-                                        {{-- <td>{{ $appointment->speacialist }}</td> --}}
+                                        {{-- <td>{{ $appointment->specialist }}</td> --}}
                                         <td>{{ $appointment->durationName->timeline }}</td>
                                         <td>
                                             @if ($appointment->image)

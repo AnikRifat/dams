@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Speacialist;
+use App\Models\Specialist;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
 
 // namespace Intervention\Image\Facades;
 
 
-class SpeacialistController extends Controller
+class SpecialistController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,9 +21,9 @@ class SpeacialistController extends Controller
     {
 
         $categories = Category::all();
-        $speacialists = Speacialist::orderBy('id', 'DESC')->get();
-        // dd($speacialists);
-        return view('admin.pages.speacialist.index', compact('speacialists', 'categories'));
+        $specialists = Specialist::orderBy('id', 'DESC')->get();
+        // dd($specialists);
+        return view('admin.pages.specialist.index', compact('specialists', 'categories'));
     }
 
     /**
@@ -35,7 +35,7 @@ class SpeacialistController extends Controller
     {
         $categories = Category::all();
         // dd(public_path());
-        return view('admin.pages.speacialist.create', compact('categories'));
+        return view('admin.pages.specialist.create', compact('categories'));
     }
 
     /**
@@ -59,55 +59,55 @@ class SpeacialistController extends Controller
         $img = Image::make($image->path());
         $img->fit(340, 440); // resize the image to fit within 380x310 while preserving aspect ratio
         $img->encode('jpg', 80); // convert image to JPEG format with 80% quality and reduce file size to 80kb
-        $img->save(base_path('/uploads/speacialists/') . $imageName);
+        $img->save(base_path('/uploads/specialists/') . $imageName);
         $data['image'] = $imageName;
-        $lastSpeacialist = Speacialist::orderByDesc('order')->first();
-        if ($lastSpeacialist) {
-            $data['order'] = $lastSpeacialist->order + 1;
+        $lastSpecialist = Specialist::orderByDesc('order')->first();
+        if ($lastSpecialist) {
+            $data['order'] = $lastSpecialist->order + 1;
         } else {
             $data['order'] = 1;
         }
-        $speacialist = Speacialist::create($data);
+        $specialist = Specialist::create($data);
 
-        if ($speacialist) {
-            return redirect()->route('speacialists.index')->with('success', 'Speacialist created successfully.');
+        if ($specialist) {
+            return redirect()->route('specialists.index')->with('success', 'Specialist created successfully.');
             # code...
         } else {
-            return back()->with('error', 'Speacialist creating showing error.');
+            return back()->with('error', 'Specialist creating showing error.');
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Speacialist  $speacialist
+     * @param  \App\Models\Specialist  $specialist
      * @return \Illuminate\Http\Response
      */
-    public function show(Speacialist $speacialist)
+    public function show(Specialist $specialist)
     {
-        return view('admin.pages.speacialist.view', compact('speacialist'));
+        return view('admin.pages.specialist.view', compact('specialist'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Speacialist  $speacialist
+     * @param  \App\Models\Specialist  $specialist
      * @return \Illuminate\Http\Response
      */
-    public function edit(Speacialist $speacialist)
+    public function edit(Specialist $specialist)
     {
         $categories = Category::all();
-        return view('admin.pages.speacialist.edit', compact('speacialist', 'categories'));
+        return view('admin.pages.specialist.edit', compact('specialist', 'categories'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Speacialist  $speacialist
+     * @param  \App\Models\Specialist  $specialist
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Speacialist $speacialist)
+    public function update(Request $request, Specialist $specialist)
     {
         $data = $request->validate([
             'title' => 'required',
@@ -124,20 +124,20 @@ class SpeacialistController extends Controller
             $img = Image::make($image->path());
             $img->fit(340, 440); // resize the image to fit within 380x310 while preserving aspect ratio
             $img->encode('jpg', 80); // convert image to JPEG format with 80% quality and reduce file size to 80kb
-            $img->save(base_path('/uploads/speacialists/') . $imageName);
+            $img->save(base_path('/uploads/specialists/') . $imageName);
 
             $data['image'] = $imageName;
         }
 
-        $speacialist = $speacialist->update($data);
+        $specialist = $specialist->update($data);
 
 
 
-        if ($speacialist) {
-            return redirect()->route('speacialists.index')->with('success', 'Speacialist Updated successfully.');
+        if ($specialist) {
+            return redirect()->route('specialists.index')->with('success', 'Specialist Updated successfully.');
             # code...
         } else {
-            return back()->with('error', 'Speacialist Update showing error.');
+            return back()->with('error', 'Specialist Update showing error.');
         }
     }
 
@@ -145,21 +145,21 @@ class SpeacialistController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Speacialist  $speacialist
+     * @param  \App\Models\Specialist  $specialist
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Speacialist $speacialist)
+    public function destroy(Specialist $specialist)
     {
-        // delete the speacialist's image file, if it exists
+        // delete the specialist's image file, if it exists
 
-        if ($speacialist->image && file_exists(asset('uploads/speacialists/' . $speacialist->image))) {
-            unlink(asset('uploads/speacialists/' . $speacialist->image));
+        if ($specialist->image && file_exists(asset('uploads/specialists/' . $specialist->image))) {
+            unlink(asset('uploads/specialists/' . $specialist->image));
         }
 
-        // delete the speacialist from the database
-        $speacialist->delete();
+        // delete the specialist from the database
+        $specialist->delete();
 
-        return redirect()->route('speacialists.index')->with('success', 'Speacialist deleted successfully.');
+        return redirect()->route('specialists.index')->with('success', 'Specialist deleted successfully.');
     }
 
 
@@ -168,35 +168,35 @@ class SpeacialistController extends Controller
      * Active the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Speacialist  $speacialist
+     * @param  \App\Models\Specialist  $specialist
      * @return \Illuminate\Http\Response
      */
-    public function Active(Speacialist $speacialist)
+    public function Active(Specialist $specialist)
     {
 
-        $speacialist->status = '1';
-        if ($speacialist->save()) {
-            return redirect()->route('speacialists.index')->with('success', 'speacialist Activated successfully.');
+        $specialist->status = '1';
+        if ($specialist->save()) {
+            return redirect()->route('specialists.index')->with('success', 'specialist Activated successfully.');
         } else {
-            return back()->with('error', 'speacialist Activation Unsuccessfull');
+            return back()->with('error', 'specialist Activation Unsuccessfull');
         }
     }
     /**
      * Inactive  the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Speacialist  $speacialist
+     * @param  \App\Models\Specialist  $specialist
      * @return \Illuminate\Http\Response
      */
-    public function Inactive(Speacialist $speacialist)
+    public function Inactive(Specialist $specialist)
 
     {
-        // dd($speacialist->status);
-        $speacialist->status = '0';
-        if ($speacialist->save()) {
-            return redirect()->route('speacialists.index')->with('success', 'speacialist Deactivated successfully.');
+        // dd($specialist->status);
+        $specialist->status = '0';
+        if ($specialist->save()) {
+            return redirect()->route('specialists.index')->with('success', 'specialist Deactivated successfully.');
         } else {
-            return back()->with('error', 'speacialist Dactivation Unsuccessfull.');
+            return back()->with('error', 'specialist Dactivation Unsuccessfull.');
         }
     }
 }

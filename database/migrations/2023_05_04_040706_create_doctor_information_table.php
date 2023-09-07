@@ -21,7 +21,7 @@ class CreateDoctorInformationTable extends Migration
             $table->date('birthday')->nullable();
             $table->string('address')->nullable();
             $table->string('profession')->nullable();
-            $table->string('speacialist');
+            $table->string('specialist');
             $table->timestamps();
         });
     }

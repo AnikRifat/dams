@@ -68,8 +68,8 @@
 									<input type="email" placeholder="Email" required="required" name="email" id="email">
 								</div>
 								<div class="form-group">
-									<input type="text" placeholder="Speacialist" required="required" name="speacialist"
-									  id="speacialist">
+									<input type="text" placeholder="Specialist" required="required" name="specialist"
+									  id="specialist">
 								</div>
 								<div class="form-group">
 									<textarea name="message" rows="6" placeholder="Message" id="comments"></textarea>

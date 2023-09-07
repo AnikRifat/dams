@@ -63,7 +63,7 @@
                     </div>
                     <div class="teamCard__content">
                         <h4 class="teamCard__title">{{ $doctor->name }}</h4>
-                        <p class="teamCard__text">{{ $doctor->doctor->speacialists->title }}</p>
+                        <p class="teamCard__text">{{ $doctor->doctor->specialists->title }}</p>
                         <div class="d-flex x-gap-10 pt-10">
                             <div class="d-flex items-center">
                                 <div class="icon-play text-14"></div>

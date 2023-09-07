@@ -11,7 +11,7 @@
                     <div class="col-auto">
                         <div data-anim="slide-up delay-1" class="is-in-view">
 
-                            <h1 class="page-header__title">Speacialist List</h1>
+                            <h1 class="page-header__title">Specialist List</h1>
 
                         </div>
                     </div>
@@ -27,11 +27,11 @@
 
                 <div class="row">
 
-                    @foreach ($speacialists as $item)
+                    @foreach ($specialists as $item)
                     <div class="col-md-2">
                         <div class="bg-dark-2 text-center my-5">
-                            <a href="{{ route('speacialist.details',$item->id) }}">
-                                <img class="w-1/1" src="{{ asset('uploads/speacialists/' . $item->image) }}" alt="book">
+                            <a href="{{ route('specialist.details',$item->id) }}">
+                                <img class="w-1/1" src="{{ asset('uploads/specialists/' . $item->image) }}" alt="book">
                                 <h5 class="text-white fw-500 py-5 text-11 ">{{ $item->title }}</h5>
                             </a>
                         </div>

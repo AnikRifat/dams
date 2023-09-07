@@ -51,16 +51,16 @@ class SearchController extends Controller
     public function filter(Request $request)
     {
 
-        $speacialist = $request->input('speacialist_id');
+        $specialist = $request->input('specialist_id');
         $duration = $request->input('duration');
         // dd($duration);
         $appointments = Appointment::query()
-            ->where(function ($query) use ($speacialist, $duration) {
+            ->where(function ($query) use ($specialist, $duration) {
 
-                if ($speacialist && $duration) {
-                    $query->where('speacialist_id', $speacialist)->Where('duration', $duration);
-                } else if ($speacialist) {
-                    $query->where('speacialist_id', $speacialist);
+                if ($specialist && $duration) {
+                    $query->where('specialist_id', $specialist)->Where('duration', $duration);
+                } else if ($specialist) {
+                    $query->where('specialist_id', $specialist);
                 } else if ($duration) {
                     $query->orWhere('duration', $duration);
                 }
@@ -68,9 +68,9 @@ class SearchController extends Controller
             ->get();
 
         $creators = Appointment::query()
-            ->where(function ($query) use ($speacialist, $duration) {
-                if ($speacialist) {
-                    $query->where('speacialist_id', $speacialist);
+            ->where(function ($query) use ($specialist, $duration) {
+                if ($specialist) {
+                    $query->where('specialist_id', $specialist);
                 }
                 if ($duration) {
                     $query->orWhere('duration', $duration);

@@ -15,16 +15,16 @@ class Doctor extends Model
         'file',
         'address',
         'birthday',
-        'profession', 'speacialist'
+        'profession', 'specialist'
     ];
 
     public function appointments()
     {
         return $this->hasMany(Appointment::class, 'creator_id', 'user_id');
     }
-    public function speacialists()
+    public function specialists()
     {
-        return $this->belongsTo(Speacialist::class, 'speacialist');
+        return $this->belongsTo(Specialist::class, 'specialist');
     }
     public function user()
     {

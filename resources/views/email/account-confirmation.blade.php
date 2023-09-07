@@ -18,7 +18,7 @@ knowledge, develop skills, and expand your horizons with our diverse range of ap
 in a vibrant community of learners and instructors who are passionate about education and personal growth.
 
 4. Learning Resources: Access supplementary materials, appointment resources, and recommended readings to enhance your
-learning experience. Dive deeper into the speacialist matter and broaden your understanding.
+learning experience. Dive deeper into the specialist matter and broaden your understanding.
 
 If you have any questions or need assistance, please don't hesitate to reach out to our support team. We're here to help
 you make the most of your learning journey.

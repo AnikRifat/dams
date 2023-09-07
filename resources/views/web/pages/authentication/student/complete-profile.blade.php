@@ -195,12 +195,12 @@
 
                                     <div class="col-md-6">
 
-                                        <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Speacialist You want to
+                                        <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Specialist You want to
                                             Teach</label>
 
-                                        <select name="speacialist">
-                                            @foreach ($speacialists as $speacialist)
-                                            <option value="{{$speacialist->id}}">{{$speacialist->title}}</option>
+                                        <select name="specialist">
+                                            @foreach ($specialists as $specialist)
+                                            <option value="{{$specialist->id}}">{{$specialist->title}}</option>
                                             @endforeach
                                         </select>
                                     </div>

@@ -20,12 +20,12 @@
       <div class="row">
         <div class="col-12">
           <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-            <h4 class="mb-sm-0 font-size-18">Speacialist</h4>
+            <h4 class="mb-sm-0 font-size-18">Specialist</h4>
 
             <div class="page-title-right">
               <ol class="breadcrumb m-0">
                 <li class="breadcrumb-item">Dashboards</li>
-                <li class="breadcrumb-item active">Speacialist</li>
+                <li class="breadcrumb-item active">Specialist</li>
               </ol>
             </div>
 
@@ -40,8 +40,8 @@
           <div class="card">
             <div class="card-body">
 
-              <a class="btn btn-soft-primary waves-effect waves-light mb-2" href="{{ route('speacialists.create') }}">
-                + Create New Speacialist </a>
+              <a class="btn btn-soft-primary waves-effect waves-light mb-2" href="{{ route('specialists.create') }}">
+                + Create New Specialist </a>
 
               <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
                 <thead>
@@ -55,22 +55,22 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($speacialists as $speacialist)
+                  @foreach ($specialists as $specialist)
                   <tr>
                     <td>
-                      @if ($speacialist->status == 1)
+                      @if ($specialist->status == 1)
                       <span class="badge rounded-pill badge-soft-success font-size-11">Active</span>
                       @else
                       <span class="badge rounded-pill badge-soft-danger font-size-11">Inactive</span>
                       @endif
                     </td>
-                    <td>{{ $speacialist->order }}</td>
-                    <td>{{ $speacialist->title }}</td>
-                    <td>{!! $speacialist->description !!}</td>
+                    <td>{{ $specialist->order }}</td>
+                    <td>{{ $specialist->title }}</td>
+                    <td>{!! $specialist->description !!}</td>
                     <td>
-                      @if ($speacialist->image)
-                      <img src="{{ asset('uploads/speacialists/' . $speacialist->image) }}"
-                        alt="{{ $speacialist->title }}" width="80">
+                      @if ($specialist->image)
+                      <img src="{{ asset('uploads/specialists/' . $specialist->image) }}" alt="{{ $specialist->title }}"
+                        width="80">
                       @else
                       No Image
                       @endif
@@ -78,37 +78,37 @@
 
 
                     <td>
-                      @if ($speacialist->status == 1)
+                      @if ($specialist->status == 1)
                       <a class="btn btn-success waves-effect btn-circle waves-light"
-                        href="{{ route('speacialists.inactive', $speacialist->id) }}">
+                        href="{{ route('specialists.inactive', $specialist->id) }}">
                         <i class="fas fa-check"></i> </a>
                       @else
                       <a class="btn btn-danger waves-effect btn-circle waves-light"
-                        href="{{ route('speacialists.active', $speacialist->id) }}">
+                        href="{{ route('specialists.active', $specialist->id) }}">
                         <i class="fa fa-times"></i> </a>
                       @endif
 
                       <a class="btn btn-primary waves-effect btn-circle waves-light"
-                        href="{{ route('speacialists.edit', $speacialist->id) }}">
+                        href="{{ route('specialists.edit', $specialist->id) }}">
                         <i class="fa fa-edit"></i> </a>
-                      <form hidden action="{{ route('speacialists.destroy', $speacialist->id) }}"
-                        id="form{{ $speacialist->id }}" method="get">
+                      <form hidden action="{{ route('specialists.destroy', $specialist->id) }}"
+                        id="form{{ $specialist->id }}" method="get">
                         @csrf
                       </form>
                       <button class="btn btn-danger waves-effect btn-circle waves-light"
-                        onclick="deleteItem({{ $speacialist->id }});" type="button">
+                        onclick="deleteItem({{ $specialist->id }});" type="button">
                         <i class="fa fa-trash"></i> </button>
                     </td>
                     {{-- <td>
-                                            <a href="{{ route('speacialists.edit', $speacialist->id) }}" class="btn
+                                            <a href="{{ route('specialists.edit', $specialist->id) }}" class="btn
                     btn-sm
                     btn-warning">Edit</a>
-                    <form action="{{ route('speacialists.destroy', $speacialist->id) }}" method="POST"
+                    <form action="{{ route('specialists.destroy', $specialist->id) }}" method="POST"
                       style="display: inline-block;">
                       @csrf
                       @method('DELETE')
                       <button type="submit" class="btn btn-sm btn-danger"
-                        onclick="return confirm('Are you sure you want to delete this speacialist?')">Delete</button>
+                        onclick="return confirm('Are you sure you want to delete this specialist?')">Delete</button>
                     </form>
                     </td> --}}
                   </tr>

@@ -26,11 +26,11 @@
                                 @csrf
 
                                 <div class="masthead-form__item">
-                                    <select class="form-control" name="speacialist_id">
+                                    <select class="form-control" name="specialist_id">
                                         <option value="">---select---</option>
-                                        @foreach($speacialists as $speacialist)
-                                        <option value="{{ $speacialist->id }}">
-                                            {{ $speacialist->title }}
+                                        @foreach($specialists as $specialist)
+                                        <option value="{{ $specialist->id }}">
+                                            {{ $specialist->title }}
                                         </option>
                                         @endforeach
                                     </select>

@@ -5,7 +5,7 @@
 
                 <div class="sectionTitle ">
 
-                    <h2 class="sectionTitle__title "> Speacialists</h2>
+                    <h2 class="sectionTitle__title "> Specialists</h2>
 
 
                 </div>
@@ -14,8 +14,8 @@
 
             <div class="col-auto">
 
-                <a href="{{ route('speacialist.all') }}" class="button -icon -purple-3 text-purple-1">
-                    All Speacialists
+                <a href="{{ route('specialist.all') }}" class="button -icon -purple-3 text-purple-1">
+                    All Specialists
                     <i class="icon-arrow-top-right text-13 ml-10"></i>
                 </a>
 
@@ -27,11 +27,11 @@
               data-slider-cols="xl-6 lg-6 md-4 sm-3 base-2">
                 <div class="swiper-wrapper">
 
-                    @foreach ($speacialists as $item)
+                    @foreach ($specialists as $item)
                     <div class="swiper-slide">
                         <div class="bg-dark-2 text-center my-5">
-                            <a href="{{ route('speacialist.details',$item->id) }}">
-                                <img class="w-1/1" src="{{ asset('uploads/speacialists/' . $item->image) }}" alt="book">
+                            <a href="{{ route('specialist.details',$item->id) }}">
+                                <img class="w-1/1" src="{{ asset('uploads/specialists/' . $item->image) }}" alt="book">
                                 <h5 class="text-white fw-500 py-5 text-11 ">{{ $item->title }}</h5>
                             </a>
                         </div>

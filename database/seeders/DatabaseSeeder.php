@@ -18,14 +18,14 @@ class DatabaseSeeder extends Seeder
             ContentSeeder::class,
             BlogSeeder::class,
             CategorySeeder::class,
-            SpeacialistSeeder::class,
+            SpecialistSeeder::class,
             DoctorSeeder::class,
             patientSeeder::class,
             AppointmentSeeder::class,
-            //ProductSeeder::class,
+            ProductSeeder::class,
             DurationSeeder::class,
-            // OrderSeeder::class,
-            //TransactionSeeder::class
+            OrderSeeder::class,
+            TransactionSeeder::class
         ]);
     }
 }

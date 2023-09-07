@@ -28,7 +28,7 @@ class YourMailableClass extends Mailable
     public function build()
     {
         $email =  $this->to('monoputocode@gmail.com')
-            ->speacialist('Testing Email')
+            ->specialist('Testing Email')
             ->view('email.test');
         dd($email);
         return $email;

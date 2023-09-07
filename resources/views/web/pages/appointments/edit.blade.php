@@ -64,14 +64,14 @@
                         </div> --}}
 
                         <div class="col-md-6">
-                            <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Speacialist*</label>
-                            <select name="speacialist_id" class="form-control">
-                                <option value="">Select Speacialist</option>
-                                @foreach($speacialists as $speacialist)
-                                <option @if($appointment->speacialist_id == $speacialist->id)
+                            <label class="text-16 lh-1 fw-500 text-dark-1 mb-10">Specialist*</label>
+                            <select name="specialist_id" class="form-control">
+                                <option value="">Select Specialist</option>
+                                @foreach($specialists as $specialist)
+                                <option @if($appointment->specialist_id == $specialist->id)
                                     selected
                                     @endif
-                                    value="{{ $speacialist->id }}">{{ $speacialist->title }}</option>
+                                    value="{{ $specialist->id }}">{{ $specialist->title }}</option>
                                 @endforeach
                             </select>
                         </div>

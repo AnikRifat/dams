@@ -5,7 +5,7 @@
 
                 <div class="sectionTitle ">
 
-                    <h2 class="sectionTitle__title ">Top Speacialists</h2>
+                    <h2 class="sectionTitle__title ">Top Specialists</h2>
                 </div>
 
             </div>
@@ -13,7 +13,7 @@
             <div class="col-auto">
 
                 <a href="#" class="button -icon -purple-3 text-purple-1">
-                    All Speacialists
+                    All Specialists
                     <i class="icon-arrow-top-right text-13 ml-10"></i>
                 </a>
 

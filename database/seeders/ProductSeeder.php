@@ -9,53 +9,53 @@ class ProductSeeder extends Seeder
 {
     public function run()
     {
-        $products = [
+        $medicalItems = [
             [
-                'name' => "Wooden Desk Organizer with Pen Holder and Small Drawer",
-                'description' => "<h2 class='specification-section__title mb-3' style='text-align:center;'>Product Description</h2> <p>This wooden desk organizer features a pen holder and a small drawer for storing your office supplies. It is perfect for keeping your desk neat and organized.</p>",
-                'price' => 424.00,
-                'image' => "1684431941.jpg",
+                'name' => "MediMask Pro - N95 Respirator Mask",
+                'description' => "<h2 class='specification-section__title mb-3' style='text-align:center;'>Product Description</h2> <p>The MediMask Pro N95 Respirator Mask provides superior protection against airborne particles, including viruses and bacteria. It is designed for medical professionals and individuals seeking maximum safety.</p>",
+                'price' => 24.99,
+                'image' => "medimask_pro.jpg",
                 'status' => 1,
-                'created_at' => "2023-05-18 17:45:41",
-                'updated_at' => "2023-05-18 17:45:41",
+                'created_at' => "2023-05-19 10:15:00",
+                'updated_at' => "2023-05-19 10:15:00",
             ],
             [
-                'name' => "Heart's Tissue Paper Box",
-                'description' => "<h2 class='specification-section__title mb-3' style='text-align:center;'>Product Description</h2> <p>This tissue paper box is designed in the shape of a heart, adding a touch of cuteness to your space. It is suitable for holding tissues and can be used in various rooms.</p>",
-                'price' => 50.00,
-                'image' => "1684432006.jpg",
+                'name' => "Digital Infrared Thermometer",
+                'description' => "<h2 class='specification-section__title mb-3' style='text-align:center;'>Product Description</h2> <p>The Digital Infrared Thermometer allows for quick and accurate temperature measurement without physical contact. It's suitable for home and medical use.</p>",
+                'price' => 39.99,
+                'image' => "infrared_thermometer.jpg",
                 'status' => 1,
-                'created_at' => "2023-05-18 17:46:46",
-                'updated_at' => "2023-05-18 17:46:46",
+                'created_at' => "2023-05-19 10:30:00",
+                'updated_at' => "2023-05-19 10:30:00",
             ],
             [
-                'name' => "Good Luck Pen Stand-Multi Color 1 Pcs - 78489",
-                'description' => "<h2 class='specification-section__title mb-3' style='text-align:center;'>Product Description</h2> <p>This pen stand comes in multiple colors and features a good luck charm. It is a perfect addition to your desk and can hold multiple pens or pencils.</p>",
-                'price' => 30.00,
-                'image' => "1684432032.jpg",
+                'name' => "Disposable Medical Gloves (Box of 100)",
+                'description' => "<h2 class='specification-section__title mb-3' style='text-align:center;'>Product Description</h2> <p>These disposable medical gloves are made from high-quality materials and provide excellent hand protection. Each box contains 100 gloves suitable for medical and personal use.</p>",
+                'price' => 14.99,
+                'image' => "medical_gloves.jpg",
                 'status' => 1,
-                'created_at' => "2023-05-18 17:47:13",
-                'updated_at' => "2023-05-18 17:47:13",
+                'created_at' => "2023-05-19 10:45:00",
+                'updated_at' => "2023-05-19 10:45:00",
             ],
             [
-                'name' => "Soft Rubber ID Card Holder",
-                'description' => "<h2 class='specification-section__title mb-3' style='text-align:center;'>Product Description</h2> <p>This soft rubber ID card holder is flexible and durable. It can securely hold your ID card and prevent it from getting damaged or lost.</p>",
-                'price' => 15.00,
-                'image' => "1684432060.jpg",
+                'name' => "Face Shield with Adjustable Headband",
+                'description' => "<h2 class='specification-section__title mb-3' style='text-align:center;'>Product Description</h2> <p>The Face Shield with Adjustable Headband provides full-face protection against droplets and splashes. It features a comfortable headband for extended wear.</p>",
+                'price' => 9.99,
+                'image' => "face_shield.jpg",
                 'status' => 1,
-                'created_at' => "2023-05-18 17:47:41",
-                'updated_at' => "2023-05-18 17:47:41",
+                'created_at' => "2023-05-19 11:00:00",
+                'updated_at' => "2023-05-19 11:00:00",
             ],
             [
-                'name' => "Pen Stand Square, 1 Pc",
-                'description' => "<h2 class='specification-section__title mb-3' style='text-align:center;'>Product Description</h2> <p>This square-shaped pen stand is made of high-quality material and can hold multiple pens. It adds a touch of elegance to your desk or office space.</p>",
-                'price' => 160.00,
-                'image' => "1684432100.jpg",
+                'name' => "Hand Sanitizer Gel (500ml)",
+                'description' => "<h2 class='specification-section__title mb-3' style='text-align:center;'>Product Description</h2> <p>The Hand Sanitizer Gel effectively kills germs and bacteria. It comes in a convenient 500ml bottle, making it ideal for personal hygiene and medical settings.</p>",
+                'price' => 8.99,
+                'image' => "hand_sanitizer.jpg",
                 'status' => 1,
-                'created_at' => "2023-05-18 17:48:20",
-                'updated_at' => "2023-05-18 17:48:20",
+                'created_at' => "2023-05-19 11:15:00",
+                'updated_at' => "2023-05-19 11:15:00",
             ],
-            // Add additional products here
+            // Add additional medical items here
             [
                 'name' => "Product Name 1",
                 'description' => "Description for Product 1",
@@ -74,11 +74,11 @@ class ProductSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            // Add more products if needed
+            // Add more medical items if needed
         ];
 
-        foreach ($products as $product) {
-            Product::create($product);
+        foreach ($medicalItems as $item) {
+            Product::create($item);
         }
     }
 }

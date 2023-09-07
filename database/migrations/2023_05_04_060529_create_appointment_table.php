@@ -18,7 +18,7 @@ class CreateAppointmentTable extends Migration
             $table->string('title');
             $table->string('price');
             $table->longtext('description');
-            $table->unsignedBigInteger('speacialist_id');
+            $table->unsignedBigInteger('specialist_id');
             $table->unsignedBigInteger('creator_id');
             $table->string('meeting_link')->nullable();
             $table->string('duration')->nullable();

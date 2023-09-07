@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Speacialist;
+use App\Models\Specialist;
 use Illuminate\Database\Seeder;
 
-class SpeacialistSeeder extends Seeder
+class SpecialistSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,10 +14,10 @@ class SpeacialistSeeder extends Seeder
      */
     public function run()
     {
-        $speacialists = [
+        $specialists = [
             [
                 'title' => 'ICT',
-                'description' => 'ICT Speacialist',
+                'description' => 'ICT Specialist',
                 'image' => '1682391808.jpg',
                 'category_id' => 3,
                 'order' => 1,
@@ -87,8 +87,8 @@ class SpeacialistSeeder extends Seeder
             ],
         ];
 
-        foreach ($speacialists as $speacialist) {
-            Speacialist::create($speacialist);
+        foreach ($specialists as $specialist) {
+            Specialist::create($specialist);
         }
     }
 }

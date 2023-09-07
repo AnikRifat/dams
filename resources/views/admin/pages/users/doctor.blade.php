@@ -115,8 +115,8 @@
                 <img src="{{ asset('') }}uploads/doctors/{{ $user->doctor->image }}" height="200" alt="">
                 <p class="mb-4">User birthday: <span class="text-primary">{{ $user->doctor->birthday }}</span></p>
                 <p class="mb-4">User profession: <span class="text-primary">{{ $user->doctor->profession }}</span></p>
-                <p class="mb-4">User speacialist: <span
-                      class="text-primary">{{ $user->doctor->speacialists->title }}</span>
+                <p class="mb-4">User specialist: <span
+                      class="text-primary">{{ $user->doctor->specialists->title }}</span>
                 </p>
                 @else
                 <h3 class="text-bold text-danger">Profile not completed yet</h3>

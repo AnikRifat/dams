@@ -82,7 +82,7 @@ class AppointmentController extends Controller
             'title' => 'required',
             'price' => 'numeric|required',
             'description' => 'required',
-            'speacialist_id' => 'required',
+            'specialist_id' => 'required',
             'creator_id' => 'required',
             'duration' => 'required',
             'image' => 'required|image|max:2048', // max file size of 2MB
@@ -156,9 +156,9 @@ class AppointmentController extends Controller
     public function search(Request $request)
     {
         $appointment = Appointment::latest()
-            ->leftjoin('speacialists', 'appointments.speacialist_id', '=', 'speacialists.id')
-            ->select('speacialists.title', 'speacialists.description', 'speacialists.image', 'appointments.*')
-            ->where('speacialists.title', 'like', '%' . $request->appointments . '%')
+            ->leftjoin('specialists', 'appointments.specialist_id', '=', 'specialists.id')
+            ->select('specialists.title', 'specialists.description', 'specialists.image', 'appointments.*')
+            ->where('specialists.title', 'like', '%' . $request->appointments . '%')
             ->Orwhere('appointments.title', 'like', '%' . $request->appointments . '%')
             ->get();
 
@@ -198,7 +198,7 @@ class AppointmentController extends Controller
         $data = $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'speacialist_id' => 'required',
+            'specialist_id' => 'required',
             'creator_id' => 'required',
             'duration' => 'required',
         ]);

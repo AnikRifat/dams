@@ -26,7 +26,7 @@ class UserController extends Controller
             $email = $userData->email;
 
             Mail::send(['text' => 'email.account-confirmation'], $userdata, function ($message) use ($email) {
-                $message->to($email)->speacialist('CLekhapora - Account Confirmation');
+                $message->to($email)->specialist('CLekhapora - Account Confirmation');
             });
             return redirect()->back()->with('success', 'User Confirmed Successfully');
         } else {
@@ -150,7 +150,7 @@ class UserController extends Controller
             'address' => 'required',
             'birthday' => 'required',
             'profession' => 'required',
-            'speacialist' => 'required',
+            'specialist' => 'required',
         ]);
         //
         if ($request->hasFile('image')) {
@@ -182,10 +182,10 @@ class UserController extends Controller
 
     public function destroy(User $user)
     {
-        // delete the speacialist's image file, if it exists
+        // delete the specialist's image file, if it exists
 
 
-        // delete the speacialist from the database
+        // delete the specialist from the database
         $user->delete();
 
         return redirect()->route('users.index')->with('success', 'user deleted successfully.');

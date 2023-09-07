@@ -10,7 +10,7 @@
 
                     <div class="sectionTitle ">
 
-                        <h2 class="sectionTitle__title ">{{ $speacialistitem->title }} appointments</h2>
+                        <h2 class="sectionTitle__title ">{{ $specialistitem->title }} appointments</h2>
 
 
                     </div>
